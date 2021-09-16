@@ -2,8 +2,13 @@ const express = require('express')
 const dotenv = require('dotenv')
 const bootcamps = require('./routes/Bootcamps')
 const morgan = require('morgan')
+const connectDB = require('./config/db')
+
 // LOAD ENV VARIABLES
 dotenv.config({ path: './config/config.env'});
+
+// Connect to DB
+connectDB()
 
 const app = express();
 
